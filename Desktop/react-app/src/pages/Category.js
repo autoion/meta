@@ -1,38 +1,58 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Container, Grid } from '@mui/material';
 import ProductCard from '../components/ProductCard';
 
-const sampleProducts = [
-  {
-    id: 1,
-    name: '브랜드A',
-    image: 'https://via.placeholder.com/150',
-    price: 35000,
-    description: '편안하고 착용감이 좋은 신발',
-  },
-  {
-    id: 2,
-    name: '브랜드B',
-    image: 'https://via.placeholder.com/150',
-    price: 25000,
-    description: '힙한 컬러가 매력적인 신발',
-  },
-  // 추가 샘플 데이터
-];
-
-function Category() {
+function Category({ products, cartItems, onProductDetail, onAddToCart }) {
   return (
-    <div className="main-content">
+    <Container>
       <h2 className="product-title">신발 상품 목록</h2>
-      <p className="product-count">현재 {sampleProducts.length}개의 상품이 있습니다.</p>
-      <div className="product-list">
-        {sampleProducts.map(product => (
-          <div className="product-item" key={product.id}>
-            <ProductCard product={product} />
-          </div>
+      <p className="product-count">현재 {products.length}개의 상품이 있습니다.</p>
+      <Grid container spacing={4}>
+        {products.map(product => (
+          <Grid item xs={12} sm={6} md={4} key={product.id}>
+            <ProductCard 
+              product={product} 
+              cartItems={cartItems}
+              onProductDetail={onProductDetail}
+              onAddToCart={onAddToCart}
+            />
+          </Grid>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Container>
   );
 }
+
+
+//propTypes를 이용해 props의 타입과 필수를 정의
+Category.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.string,
+      stock: PropTypes.number,
+    })
+  ).isRequired,
+  cartItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      stock: PropTypes.number,
+    })
+  ),
+  onProductDetail: PropTypes.func.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
+};
+
+Category.defaultProps = {
+  cartItems: [], 
+};
 
 export default Category;

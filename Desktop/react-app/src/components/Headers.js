@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Headers() {
+
+function Headers({productsCounts}) {
   return (
     <header>
       <nav>
@@ -15,7 +16,7 @@ function Headers() {
       </nav>
       <div className="App-header">
         <h1>신발 상품 목록</h1>
-        <p>현재 6개의 상품이 있습니다.</p>
+        <p>현재 {productsCounts} 개의 상품이 있습니다.</p>
       </div>
     </header>
   );

@@ -20,6 +20,7 @@ function Cart({ cartItems }) {
   );
 }
 
+//propTypes를 이용해 props의 타입과 필수를 정의
 Cart.propTypes = {
   cartItems: PropTypes.arrayOf(
     PropTypes.shape({

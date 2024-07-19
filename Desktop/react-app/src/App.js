@@ -23,7 +23,7 @@ const sampleProducts = [
     description: '힙한 컬러가 매력적인 신발',
     stock: 3,
   },
-  // 추가 샘플 데이터
+  
 ];
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
 
   const handleProductDetail = (product) => {
     console.log(`Product detail for: ${product.name}`);
-    // 추가 로직 (예: 상세 페이지로 이동)
+    
   };
 
   const handleAddToCart = (product) => {
@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <Router>
-      <Headers />
+      <Headers productCount={sampleProducts} />
       <div className="main-content">
         <Routes>
           <Route path="/" element={<div>홈페이지</div>} />
@@ -50,6 +50,7 @@ const App = () => {
             element={
               <Category
                 products={sampleProducts}
+                cartItems={cartItems || []} // 기본값으로 빈 배열 사용
                 onProductDetail={handleProductDetail}
                 onAddToCart={handleAddToCart}
               />
@@ -66,7 +67,7 @@ const App = () => {
           />
           <Route
             path="/cart"
-            element={<Cart cartItems={cartItems} />}
+            element={<Cart cartItems={cartItems || []} />} // 기본값으로 빈 배열 사용
           />
         </Routes>
       </div>
