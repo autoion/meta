@@ -1,37 +1,37 @@
 import React from 'react';
-import { Container, Grid } from '@mui/material';
 import ProductCard from '../components/ProductCard';
 
 const sampleProducts = [
   {
     id: 1,
-    name: '신발 1',
+    name: '브랜드A',
     image: 'https://via.placeholder.com/150',
-    price: 10000,
-    stock: 5,
+    price: 35000,
+    description: '편안하고 착용감이 좋은 신발',
   },
   {
     id: 2,
-    name: '신발 2',
+    name: '브랜드B',
     image: 'https://via.placeholder.com/150',
-    price: 20000,
-    stock: 3,
+    price: 25000,
+    description: '힙한 컬러가 매력적인 신발',
   },
- 
+  // 추가 샘플 데이터
 ];
 
 function Category() {
   return (
-    <Container>
-      <Grid container spacing={4}>
+    <div className="main-content">
+      <h2 className="product-title">신발 상품 목록</h2>
+      <p className="product-count">현재 {sampleProducts.length}개의 상품이 있습니다.</p>
+      <div className="product-list">
         {sampleProducts.map(product => (
-          //xs - 모바일(한 줄에 1개), sm - 태블릿(한 줄에 2개), md - 데스크탑(한 줄에 3개)
-          <Grid item xs={12} sm={6} md={4} key={product.id}> 
+          <div className="product-item" key={product.id}>
             <ProductCard product={product} />
-          </Grid>
+          </div>
         ))}
-      </Grid>
-    </Container>
+      </div>
+    </div>
   );
 }
 
