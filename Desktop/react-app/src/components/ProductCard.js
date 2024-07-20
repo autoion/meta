@@ -6,19 +6,10 @@ import "../App.css";
 function ProductCard({ product, cartItems, onProductDetail, onAddToCart }) {
   return (
     <div className="product-card">
-      <img 
-        src={product.image}  // imageSrc를 image로 변경
-        alt={product.description} 
-        className="product-img" 
-        onClick={() => onProductDetail(product)} 
-      />
-      <div className="product-name">{product.brand}</div>  {/* name → brand로 변경 */}
+      <img src={product.image} alt={product.description} className="product-img" onClick={() => onProductDetail(product)} />
+      <div className="product-name">{product.name}</div>  
       <div className="product-price">{product.price.toLocaleString()}원</div>
-      <AddCartButton 
-        product={product} 
-        cartItems={cartItems} 
-        onAddToCart={onAddToCart} 
-      />
+      <AddCartButton product={product} cartItems={cartItems} onAddToCart={onAddToCart} />
     </div>
   );
 }

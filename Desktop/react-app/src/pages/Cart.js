@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
+/*장바구니가 비어있으면 상품이 없다라는 멘트 있다면 담겨져있는 상품의 정보가 뜸 */
 function Cart({ cartItems }) {
   return (
     <div className="cart">
