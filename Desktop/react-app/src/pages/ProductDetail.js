@@ -17,7 +17,7 @@ function ProductDetail({ products, onAddToCart }) {
 
   return (
     <div className="product-detail">
-      <img src={product.image} alt={`${product.name} 이미지`} />
+      <img src={product.img} alt={`${product.name} 이미지`} />
       <h2>{product.name}</h2>
       <p>{product.description}</p>
       <p>가격: {product.price}원</p>
@@ -26,6 +26,7 @@ function ProductDetail({ products, onAddToCart }) {
   );
 }
 
+//propTypes를 이용해 props의 타입과 필수의 여부를 정의
 ProductDetail.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({

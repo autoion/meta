@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+import "../App.css";
 
-function Headers({productsCounts}) {
+function Headers({ cartItems }) {
   return (
     <header>
-      <nav>
-        <Link to="/" className="logo">쇼핑몰</Link>
-        <input type="text" placeholder="Search..." />
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/category">Category</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
-        </ul>
-      </nav>
-      <div className="App-header">
-        <h1>신발 상품 목록</h1>
-        <p>현재 {productsCounts} 개의 상품이 있습니다.</p>
-      </div>
+      <Link to="/cart">
+        <img
+          src={process.env.PUBLIC_URL + '/img/bag.png'} // 올바른 이미지 경로 설정
+          alt="Shopping Bag" // 적절한 대체 텍스트 설정
+        />
+      </Link>
+      <span className="cart-count">{cartItems.length}</span>
     </header>
   );
 }
+
+// propTypes를 이용해 props의 타입과 필수 여부를 정의
+Headers.propTypes = {
+  cartItems: PropTypes.array.isRequired,
+};
 
 export default Headers;
