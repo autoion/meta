@@ -14,6 +14,8 @@ const sampleProducts = [
 ];
 
 function Category({ cartItems, onAddToCart }) {
+  const Product_count = sampleProducts.length;
+
   const handleProductDetail = (product) => {
     console.log(`Product detail for: ${product.name}`);
   };
@@ -22,7 +24,7 @@ function Category({ cartItems, onAddToCart }) {
     /* 상품 카드의 형태 */
     <Container>
       <h2 className="product-title">신발 상품 목록</h2>
-      <p className="product-count">현재 {sampleProducts.length}개의 상품이 있습니다.</p>
+      <p className="product-count">현재 {Product_count}개의 상품이 있습니다.</p>
       <Grid container spacing={4}>
         {sampleProducts.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>

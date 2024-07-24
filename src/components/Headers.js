@@ -1,24 +1,38 @@
+// src/components/Headers.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import "../App.css";
+import { useNavigate, useLocation } from 'react-router-dom';
+import '../App.css';
 
 function Headers({ cartItems }) {
-  const cartItemCount = cartItems.length;
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  /* 최신 react는 public 디렉토리에 바로 접근 불가 process.env.PUBLIC_URL 필요*/ 
+  // 카트 페이지 여부를 확인
+  const isCartPage = location.pathname === '/cart';
+
+  // 뒤로가기 버튼 클릭 핸들러
+  const handleBack_btn = () => {
+    navigate('/meta');
+  };
+
+  // 카트 버튼 클릭 핸들러
+  const handleCart_btn = () => {
+    navigate('/cart');
+  };
+
   return (
-    <header>
-      <Link to="/cart">
-        <img src={process.env.PUBLIC_URL + '/img/bag.png'} alt="Shopping Bag" />  
-        <span className="cart-count">{cartItemCount}</span>
-      </Link>
+    <header className="header">
+      {isCartPage ? (<img src={process.env.PUBLIC_URL + '/img/back-arrow.png'} alt="Back" className="back-button" onClick={handleBack_btn} />
+      ) : (
+        <>
+          <div className="cart-link" onClick={handleCart_btn}>
+            <img src={process.env.PUBLIC_URL + '/img/bag.png'} alt="Cart" className="cart-icon" />
+            {cartItems.length > 0 && (<span className="cart-count">{cartItems.length}</span>)}
+          </div>
+        </>
+      )}
     </header>
   );
 }
-
-Headers.propTypes = {
-  cartItems: PropTypes.array.isRequired,
-};
 
 export default Headers;

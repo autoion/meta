@@ -1,40 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import AddCartButton from './AddCartButton';
-import "../App.css";
 
-function ProductCard({ product, cartItems, onProductDetail, onAddToCart }) {
+const ProductCard = ({ product, onAddToCart, cartItems }) => {
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    navigate(`/product/${product.id}`); // 상품 ID를 URL에 포함
+  };
+
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.description} className="product-img" onClick={() => onProductDetail(product)} />
-      <div className="product-name" onClick={() => onProductDetail(product)}>{product.name}</div>  
-      <div className="product-price">{parseInt(product.price).toLocaleString()}원</div>
+      <div className="product-info" onClick={handleProductClick}>
+        <img src={product.image} alt={product.name} className="product-img" />
+        <h3 className="product-name">{product.name}</h3>
+        <p className="product-description">{product.description}</p>
+        <p className="product-price">{product.price}원</p>
+      </div>
       <AddCartButton product={product} cartItems={cartItems} onAddToCart={onAddToCart} />
     </div>
   );
-}
+};
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired, 
     image: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    stock: PropTypes.number,
   }).isRequired,
-  cartItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      stock: PropTypes.number,
-    })
-  ),
-  onProductDetail: PropTypes.func.isRequired,
   onAddToCart: PropTypes.func.isRequired,
+  cartItems: PropTypes.array.isRequired,
 };
 
 export default ProductCard;

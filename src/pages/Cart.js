@@ -6,7 +6,13 @@ import '../App.css';
 
 /*장바구니가 비어있으면 상품이 없다라는 멘트 있다면 담겨져있는 상품의 정보가 뜸 */
 function Cart({ cartItems }) {
-  const navigate = useNavigate(); /*useNavigate 훅을 사용하여 navigate 함수 가져오기 */
+  const Product_Number = cartItems.length; /* 상품 개수 */
+  
+  const navigate = useNavigate(); 
+
+  const handlecheckout_btn = () => {
+    navigate('/checkout');
+  }
 
   const TotalPrice = () => {
     return cartItems.reduce((total, item) => total + parseInt(item.price.replace(/,/g, '')), 0);
@@ -16,10 +22,9 @@ function Cart({ cartItems }) {
 
   return (
     <div className="cart-container">
-    <button className="back-button" onClick={() => navigate(-1)}>뒤로가기</button>
     <h2>장바구니</h2>
-    <p>현재 {cartItems.length}개의 상품이 담겨있습니다.</p>
-    {cartItems.length === 0 ? (
+    <p>현재 {Product_Number}개의 상품이 담겨있습니다.</p>
+    {Product_Number === 0 ? (
       <p>장바구니에 상품이 없습니다.</p>
     ) : (
       <div>
@@ -50,7 +55,7 @@ function Cart({ cartItems }) {
             <span>총 금액</span>
             <span>{(TotalPrice() + deliveryfee).toLocaleString()}원</span>
           </div>
-          <button className="checkout-button">결제하기</button>
+          <button className="checkout-button" onClick={handlecheckout_btn}>결제하기</button>
         </div>
       </div>
     )}

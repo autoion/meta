@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Headers from './components/Headers';
 import Category from './pages/Category';
 import Cart from './pages/Cart';
+import PaytoCard from './pages/PaytoCard';
 import './App.css';
 
 const App = () => {
@@ -24,9 +25,13 @@ const App = () => {
           path="/cart" 
           element={<Cart cartItems={cartItems} />} 
         />
+        <Route
+          path="/checkout"
+          element={<PaytoCard cartItems={cartItems} />}
+        />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
