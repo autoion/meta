@@ -15,7 +15,7 @@ const sampleProducts = [
 
 function Category({ cartItems, onAddToCart }) {
   const handleProductDetail = (product) => {
-    console.log(`Product detail for: ${product.brand}`);
+    console.log(`Product detail for: ${product.name}`);
   };
 
   return (

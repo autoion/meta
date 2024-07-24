@@ -8,7 +8,7 @@ const AddCartButton = ({ product, cartItems, onAddToCart }) => {
   return (
     /* 담기버튼을 누르면 담겼다고 뜨고 버튼 비활성화 */
     <button className={`add-cart-button ${isInCart ? "added" : ""}`} onClick={() => onAddToCart(product)} disabled={isInCart}>
-      {isInCart ? "담겼습니다." : "담기"}
+      {isInCart ? "담김!" : "담기"}
     </button>
   );
 };
