@@ -8,6 +8,40 @@ header {
   padding: 0 20px;
 }
 
+.mycards-header {
+  background-color: white;
+  color: black;
+  justify-content: space-between;
+}
+
+.mycards-header .mycards-header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.checkout-header {
+  background-color: white;
+  color: black;
+  justify-content: space-between;
+}
+
+.checkout-header .Checkout-header-content{
+  display: flex;
+  justify-content: space-between;
+  width : 100%;
+}
+
+
+
 .logo {
   cursor: pointer;
   height: 40px;
@@ -278,3 +312,4 @@ payto-card-container {
   text-align: center;
 }
 
+/*MyCards.js 페이지*/

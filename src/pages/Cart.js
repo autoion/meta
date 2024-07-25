@@ -11,7 +11,7 @@ function Cart({ cartItems }) {
   const navigate = useNavigate(); 
 
   const handlecheckout_btn = () => {
-    navigate('/checkout');
+    navigate('/Cardlist');
   }
 
   const TotalPrice = () => {
