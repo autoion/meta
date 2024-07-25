@@ -6,7 +6,7 @@ import "../App.css";
 const AddCartButton = ({ product, cartItems, onAddToCart }) => {
   const isInCart = cartItems.some(item => item.id === product.id);
 
-  /* Navigate */
+ 
   const navigate = useNavigate();
 
   const handleBuyProduct = (product) => {

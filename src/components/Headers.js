@@ -8,8 +8,8 @@ function Headers({ cartItems }) {
 
   /* 페이지마다 header를 다르게 */ 
   const isCartPage = location.pathname === '/cart';
-  const isMyCardsPage = location.pathname === '/CardList';
-  const isCheckOutPage = location.pathname === '/AddCards';
+  const isCardlistPage = location.pathname === '/Cardlist';
+  const isAddcardPage = location.pathname === '/AddCards';
 
   /* 뒤로가기 버튼 클릭 핸들러 */
   const handleBack_btn = () => {
@@ -23,17 +23,17 @@ function Headers({ cartItems }) {
 
   return (
     /* 페이지마다 header를 다르게 */ 
-    <header className={`header ${isCartPage ? 'cart-header' : ''} ${isMyCardsPage ? 'mycards-header' : ''} ${ isCheckOutPage ? 'checkout-header': ''} `} >
+    <header className={`header ${isCartPage ? 'cart-header' : ''} ${isCardlistPage ? 'cardlist-header' : ''} ${ isAddcardPage ? 'addcard-header': ''} `} >
       {isCartPage ? (
         <img src={process.env.PUBLIC_URL + '/img/back-arrow.png'} alt="Back" className="back-button" onClick={handleBack_btn} />
-      ) : isMyCardsPage ? (
-        <div className="mycards-header-content">
+      ) : isCardlistPage ? (
+        <div className="cardlist-header-content">
           <span>보유카드</span>
           <button className="close-button" onClick={handleBack_btn}>X</button>
         </div>
-      ) : isCheckOutPage ? (
-        <div className="Checkout-header-content">
-          <img src={process.env.PUBLIC_URL + '/img/back-arrow.png'} alt="Back" className="back-button" onClick={handleCart_btn} />
+      ) : isAddcardPage ? (
+        <div className="addcard-header-content">
+          <img src={process.env.PUBLIC_URL + '/img/black-back-arrow.png'} alt="Back" className="back-button" onClick={handleCart_btn} />
           <span>카드추가</span>
           <button className="close-button" onClick={handleBack_btn}>X</button>
         </div>

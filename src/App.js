@@ -4,7 +4,7 @@ import Headers from './components/Headers';
 import Category from './pages/Category';
 import Cart from './pages/Cart';
 import Addcard from './pages/Addcard';
-import CardList from './pages/Cardlist'
+import Cardlist from './pages/Cardlist'
 import './App.css';
 
 
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/" element={<Category cartItems={cartItems} onAddToCart={handleAddToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} />} />
         <Route path="/AddCards" element={<Addcard addCard={addCard} />} />
-        <Route path="/CardList" element={<CardList cards={cards} />} />
+        <Route path="/Cardlist" element={<Cardlist cards={cards} />} />
       </Routes>
     </Router>
   );

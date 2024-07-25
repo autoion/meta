@@ -1,4 +1,9 @@
-/* Header 스타일 */
+/* 공통 스타일 */
+h1 {
+  text-align: center;
+  margin: 20px 0; 
+}
+
 header {
   background-color: #000000; 
   min-height: 10vh;
@@ -8,47 +13,7 @@ header {
   padding: 0 20px;
 }
 
-.mycards-header {
-  background-color: white;
-  color: black;
-  justify-content: space-between;
-}
-
-.mycards-header .mycards-header-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-
-.checkout-header {
-  background-color: white;
-  color: black;
-  justify-content: space-between;
-}
-
-.checkout-header .Checkout-header-content{
-  display: flex;
-  justify-content: space-between;
-  width : 100%;
-}
-
-
-
-.logo {
-  cursor: pointer;
-  height: 40px;
-}
-
 header img {
-  right: auto;
   width: 40px; 
   height: auto; 
   cursor: pointer; 
@@ -57,7 +22,7 @@ header img {
 .cart-count {
   position: auto;
   top: -5px;
-  left: -5px;
+  right: -5px;
   background-color: white;
   color: black;
   border-radius: 50%;
@@ -66,84 +31,117 @@ header img {
   font-weight: bold;
 }
 
-/* ProductCard 스타일 */
-.product-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  margin: 10px;
-  background-color: #ffffff;
+/* cardlist 헤더 스타일 & 페이지*/
+.header.cardlist-header{
+  background-color: white;
+  color: black;
 }
 
-.product-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.product-card .product-name {
-  font-size: 20px;
-  margin: 10px 15px;
-  font-weight: bold;
-}
-
-.product-card .product-description {
-  font-size: 16px;
-  margin: 5px 15px;
-  color: #555;
-}
-
-.product-card .product-price {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 15px;
-}
-
-
-/* Category 스타일 */
-product-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  margin: 10px;
-  background-color: #ffffff;
+.cardlist-header-content{
   display: flex;
-  flex-direction: column; 
-}
-
-/* 이미지 스타일 */
-.product-card img {
+  justify-content: space-between;
   width: 100%;
-  height: 200px; 
-  object-fit: cover; 
-  display: block;
 }
 
 
-/* AddCartButton 스타일 */
-.add-cart-button {
-  background-color: #000000; 
-  color: white; 
-  border: none; 
-  border-radius: 20px; 
-  padding: 10px 20px; 
-  justify-content: center;
-  font-size: 15px; 
-  cursor: pointer; 
+.cardlist-header-content .close-button {
+  width: 30px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.add-cart-button:active {
-  transform: scale(0.98); 
+.add-card-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  margin: 20px 0; 
 }
 
 
-.add-cart-button:disabled {
-  background-color: #6c757d; 
-  cursor: not-allowed; 
+
+/* Addcard 페이지 헤더 스타일 */
+.header.addcard-header {
+  background-color: white;
+  color: black;
+}
+
+.addcard-header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.addcard-header-content .back-button {
+  width: 20px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.addcard-header-content .close-button {
+  width: 30px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* Addcard 페이지 스타일 */
+.addcard-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.addcard-container h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.addcard-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addcard-form label {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.addcard-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.addcard-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.addcard-form button:hover {
+  background-color: #333;
+}
+
+.addcard-form button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
 }
 
 /* Cart 페이지 스타일 */
@@ -221,6 +219,7 @@ product-card {
   font-size: 18px;
   margin: 0 10px;
 }
+
 .cart-summary {
   border-top: 1px solid #ddd;
   padding-top: 10px;
@@ -228,7 +227,6 @@ product-card {
 }
 
 .cart-summary-item {
-  
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
@@ -243,7 +241,6 @@ product-card {
   width: 100%;
   padding: 10px;
   background-color: #393939;
-  ;
   color: white;
   border: none;
   border-radius: 4px;
@@ -256,8 +253,66 @@ product-card {
   background-color: #0056b3;
 }
 
-/* PaytoCard 페이지 스타일 */
-payto-card-container {
+/* ProductCard 페이지 스타일 */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 10px;
+  background-color: #ffffff;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  display: block;
+}
+
+.product-card .product-name {
+  font-size: 20px;
+  margin: 10px 15px;
+  font-weight: bold;
+}
+
+.product-card .product-description {
+  font-size: 16px;
+  margin: 5px 15px;
+  color: #555;
+}
+
+.product-card .product-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 15px;
+}
+
+
+/* AddCartButton 스타일 */
+.add-cart-button {
+  background-color: #000000; 
+  color: white; 
+  border: none; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  justify-content: center;
+  font-size: 15px; 
+  cursor: pointer; 
+}
+
+.add-cart-button:active {
+  transform: scale(0.98); 
+}
+
+.add-cart-button:disabled {
+  background-color: #6c757d; 
+  cursor: not-allowed; 
+}
+
+/* addcard 페이지 스타일 */
+.addcard-container {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -267,32 +322,32 @@ payto-card-container {
   background-color: #fff;
 }
 
-.payto-card-container h2 {
+.addcard-container h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
 }
 
-.payto-card-form {
+.addcard-container {
   display: flex;
   flex-direction: column;
 }
 
-.payto-card-form label {
+.addcard-container label {
   margin-bottom: 15px;
   font-size: 16px;
 }
 
-.payto-card-form input {
+.addcard-container input {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
 }
 
-.payto-card-form button {
+.addcard-form button {
   padding: 10px;
   border: none;
   border-radius: 50px;
@@ -303,7 +358,7 @@ payto-card-container {
   margin-top: 10px;
 }
 
-.payto-card-form button:hover {
+.addcard-form button:hover {
   background-color: #000000;
 }
 
@@ -312,4 +367,29 @@ payto-card-container {
   text-align: center;
 }
 
-/*MyCards.js 페이지*/
+.link-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+/* Buy Product 버튼 스타일 */
+.buy-product {
+  background-color: #FFEF64;
+  color: black; 
+  border: none; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  justify-content: center;
+  font-size: 15px; 
+  cursor: pointer; 
+}
+
+
+

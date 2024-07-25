@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
-const PaytoCard = () => {
+const Addcard = () => {
   const navigate = useNavigate();
   const handlenHome_btn = () => navigate('/');
 
@@ -39,8 +39,8 @@ const PaytoCard = () => {
   };
 
   return (
-    <div className="payto-card-container">
-      <form onSubmit={handleSubmit} className="payto-card-form">
+    <div className="addcard-container">
+      <form onSubmit={handleSubmit} className="addcard-form">
         <label>카드 번호:<input type="text" name="Card_number" value={formData.Card_number} onChange={handleChange} required /></label>
         <label>만료일 (MM/YY):<input type="text" name="expiration_date" value={formData.expiration_date} onChange={handleChange} required placeholder="MM/YY" /></label>
         <label>카드 소유주 이름:<input type="text" name="Card_master" value={formData.Card_master} onChange={handleChange} required placeholder="카드에 표시된 이름과 동일하게 입력하세요." /></label>
@@ -55,4 +55,4 @@ const PaytoCard = () => {
   );
 };
 
-export default PaytoCard;
+export default Addcard;

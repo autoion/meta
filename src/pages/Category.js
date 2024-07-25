@@ -15,6 +15,7 @@ const sampleProducts = [
 
 function Category({ cartItems, onAddToCart }) {
   const Product_count = sampleProducts.length;
+  
   /*상품의 상세페이지*/
   const handleProductDetail = (product) => {
     console.log(`Product detail for: ${product.name}`);

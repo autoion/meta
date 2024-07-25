@@ -7,7 +7,7 @@ const ProductCard = ({ product, onAddToCart, cartItems }) => {
   const navigate = useNavigate();
 
   const handleProductClick = () => {
-    navigate(`/product/${product.id}`); // 상품 ID를 URL에 포함
+    navigate(`/product/${product.id}`); /* 상품 ID를 URL에 포함 */
   };
 
   return (
