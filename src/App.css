@@ -18,7 +18,7 @@
 .cart-count {
   position:absolute;
   right: 5px;
-  top: 45px; /* 아이콘 오른쪽 대각선 아래로 이동 */
+  top: 45px;
   background-color: white;
   color: black;
   border-radius: 50%;
@@ -42,176 +42,6 @@
   cursor: pointer; 
 }
 
-/* cardlist 헤더 스타일 & 페이지*/
-.header.cardlist-header{
-  background-color: white;
-  color: black;
-}
-
-.new-card{
-  text-align: center;
-}
-
-.cardlist-header-content{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.cardlist-title{
-  padding-left: 30px;
-  padding-top: 10px;
-  font-size: 1.5rem;
-}
-
-.cardlist-close-button{
-  padding-right: 30px;
-  padding-bottom: 30px;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.cardlist-close-button::before{
-  content: 'x';
-  font-size: 2rem;
-  color: #000;
-}
-
-.addcard-button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.addcard-button {
-  width: 350px;
-  height: 200px;
-  margin: 25px;
-  padding: 25px;
-  border-radius: 10px;
-  border: none;
-  background: #f0f0f0; /* 버튼의 배경색을 설정합니다 */
-  cursor: pointer; /* 커서를 손가락 모양으로 변경 */
-}
-
-.addcard-button::before {
-  content: '+';
-  font-size: 3rem;
-  color: #000;
-}
-
-
-
-/* Addcard 페이지 헤더 스타일 */
-.header.addcard-header {
-  
-  background-color: white;
-  color: black;
-}
-
-.addcard-back-button{
-  width: 40px; 
-}
-
-.addcard-header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-}
-
-.left-content {
-  display: flex;
-  align-items: center;
-}
-
-
-.addcard-title {
-  padding-bottom: 5px;
-  font-size: 1.2rem;
-}
-
-.right-content {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.addcard-close-button {
-  padding-right: 30px;
-  padding-bottom: 20px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-
-.addcard-close-button::before{
-  content: 'x';
-  font-size: 2rem;
-  color: #000;
-}
-
-
-/* Addcard 페이지 스타일 */
-.addcard-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-.addcard-container h2 {
-  text-align: left;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-.addcard-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.addcard-form label {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-.addcard-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px; 
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.addcard-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #000000;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.addcard-form button:hover {
-  background-color: #333;
-}
-
-.addcard-form button:disabled {
-  background-color: #888;
-  cursor: not-allowed;
-}
 
 /* Cart 페이지 스타일 */
 .cart-container {
@@ -322,6 +152,67 @@
   background-color: #0056b3;
 }
 
+/* cardlist 헤더 스타일 & 페이지*/
+.header.cardlist-header{
+  background-color: white;
+  color: black;
+}
+
+.new-card{
+  text-align: center;
+}
+
+.cardlist-header-content{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardlist-title{
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
+
+.cardlist-close-button{
+  padding-right: 30px;
+  padding-bottom: 30px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cardlist-close-button::before{
+  content: 'x';
+  font-size: 2rem;
+  color: #000;
+}
+
+.addcard-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.addcard-button {
+  width: 350px;
+  height: 200px;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 10px;
+  border: none;
+  background: #f0f0f0; 
+  cursor: pointer; 
+}
+
+.addcard-button::before {
+  content: '+';
+  font-size: 3rem;
+  color: #000;
+}
+
 /* ProductCard 페이지 스타일 */
 .product-card {
   border: 1px solid #ddd;
@@ -358,6 +249,151 @@
   margin: 10px 15px;
 }
 
+
+/* Addcard 페이지 헤더 스타일 */
+.header.addcard-header {
+  
+  background-color: white;
+  color: black;
+}
+
+.addcard-back-button{
+  width: 40px; 
+}
+
+.addcard-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+
+.addcard-title {
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.right-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addcard-close-button {
+  padding-right: 30px;
+  padding-bottom: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.addcard-close-button::before{
+  content: 'x';
+  font-size: 2rem;
+  color: #000;
+}
+
+
+/* Addcard 페이지 스타일 */
+.addcard-container {
+  background-color: #fff;
+  border: none;
+  padding: 20px;
+  width: 300px;
+}
+
+.addcard-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addcard-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.addcard-form input[type="text"],
+.addcard-form input[type="password"] {
+  width: calc(100% - 20px);
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ECEBF1;
+}
+
+.card-password-input {
+  display: flex;
+  align-items: center;
+}
+
+.card-password-box {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ECEBF1;
+}
+
+.card-password-dots {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.card-password-dot {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.addcard-form button {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addcard-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.link-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 /* AddCartButton 스타일 */
 .add-cart-button {
