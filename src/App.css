@@ -1,28 +1,24 @@
-/* 공통 스타일 */
-h1 {
-  text-align: center;
-  margin: 20px 0; 
-}
-
-header {
-  background-color: #000000; 
+/* HomePage 헤더 스타일 */
+.home-header {
+  background-color: #000000;
   min-height: 10vh;
-  color: white; 
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  padding: 0 20px;
 }
 
-header img {
+.cart-icon {
+  left: -20px;
   width: 40px; 
   height: auto; 
   cursor: pointer; 
+  position: relative;
 }
 
 .cart-count {
-  position: auto;
-  top: -5px;
-  right: -5px;
+  position:absolute;
+  right: 5px;
+  top: 45px; /* 아이콘 오른쪽 대각선 아래로 이동 */
   background-color: white;
   color: black;
   border-radius: 50%;
@@ -31,10 +27,29 @@ header img {
   font-weight: bold;
 }
 
+/* Cart 헤더 스타일 */
+.cart-header{
+  background-color: #000000;
+  min-height: 10vh;
+  align-items: center;
+  display: flex;
+}
+
+.cart-back-button {
+
+  width: 40px; 
+  height: auto; 
+  cursor: pointer; 
+}
+
 /* cardlist 헤더 스타일 & 페이지*/
 .header.cardlist-header{
   background-color: white;
   color: black;
+}
+
+.new-card{
+  text-align: center;
 }
 
 .cardlist-header-content{
@@ -43,48 +58,102 @@ header img {
   width: 100%;
 }
 
+.cardlist-title{
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 1.5rem;
+}
 
-.cardlist-header-content .close-button {
-  width: 30px;
+.cardlist-close-button{
+  padding-right: 30px;
+  padding-bottom: 30px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
-.add-card-button-container {
-  width: 100%;
+.cardlist-close-button::before{
+  content: 'x';
+  font-size: 2rem;
+  color: #000;
+}
+
+.addcard-button-container {
   display: flex;
-  justify-content: center; 
-  margin: 20px 0; 
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.addcard-button {
+  width: 350px;
+  height: 200px;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 10px;
+  border: none;
+  background: #f0f0f0; /* 버튼의 배경색을 설정합니다 */
+  cursor: pointer; /* 커서를 손가락 모양으로 변경 */
+}
+
+.addcard-button::before {
+  content: '+';
+  font-size: 3rem;
+  color: #000;
 }
 
 
 
 /* Addcard 페이지 헤더 스타일 */
 .header.addcard-header {
+  
   background-color: white;
   color: black;
+}
+
+.addcard-back-button{
+  width: 40px; 
 }
 
 .addcard-header-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  padding: 10px;
 }
 
-.addcard-header-content .back-button {
-  width: 20px;
-  height: 24px;
-  cursor: pointer;
+.left-content {
+  display: flex;
+  align-items: center;
 }
 
-.addcard-header-content .close-button {
-  width: 30px;
+
+.addcard-title {
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.right-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.addcard-close-button {
+  padding-right: 30px;
+  padding-bottom: 20px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 1.5rem;
   cursor: pointer;
+}
+
+
+.addcard-close-button::before{
+  content: 'x';
+  font-size: 2rem;
+  color: #000;
 }
 
 

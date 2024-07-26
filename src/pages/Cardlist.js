@@ -11,9 +11,9 @@ const Cardlist = ({ cards }) => {
 
   return (
     <div className="cardlist-container">
-      <h1>새로운 카드를 등록해주세요.</h1>
-      <div className="add-card-button-container" onClick={handleAddCard}>
-        <img src={process.env.PUBLIC_URL + '/img/card.png'} alt="Add Card" className="add-card-button" />
+      <h2 className="new-card">새로운 카드를 등록해주세요.</h2>
+      <div className="addcard-button-container">
+        <button className="addcard-button" onClick={handleAddCard}></button>
       </div>
       <div className="cards">
         {cards.map(card => (
