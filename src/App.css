@@ -36,7 +36,6 @@
 }
 
 .cart-back-button {
-
   width: 40px; 
   height: auto; 
   cursor: pointer; 
@@ -46,6 +45,7 @@
 /* Cart 페이지 스타일 */
 .cart-container {
   padding: 20px;
+  cursor: pointer;
 }
 
 .back-button {
