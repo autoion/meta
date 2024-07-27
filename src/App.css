@@ -304,26 +304,51 @@
 
 
 /* Addcard 페이지 스타일 */
-.addcard-container {
+.addcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
-  border: none;
-  padding: 20px;
-  width: 300px;
+}
+
+.Isnowcard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 350px;
+  height: 200px;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 10px;
+  background: #000000; 
+  position: relative;
+}
+
+.IC {
+  display: flex;
+  justify-content: flex-start;
+  width: 50px;
+  height: 30px;
+  background: #CBBA64;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-name-expiry{
+  justify-content: space-between;
+  color: white;
+  font-size: 20px;
+  margin-top: 100px;
+
 }
 
 .addcard-form {
   border: none;
   display: flex;
   flex-direction: column;
+  gap: 20px; 
 }
-
-/* .addcard-form label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  font-size: 14px;
-  color: #666;
-} */
 
 .addcard-form input[type="text"],
 .addcard-form input[type="password"] {
@@ -347,7 +372,6 @@
   height: 40px;
   margin-right: 5px;
   text-align: center;
-  border: none;
   border-radius: 4px;
   background-color: #ECEBF1;
 }
@@ -377,11 +401,6 @@
   cursor: pointer;
 }
 
-.addcard-form button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 .link-container {
   margin-top: 20px;
   text-align: center;
@@ -396,6 +415,7 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
 
 /* AddCartButton 스타일 */
 .add-cart-button {
