@@ -73,6 +73,7 @@
 }
 
 .cart-item-image {
+  object-fit: cover;
   width: 50px;
   height: 50px;
   margin-right: 10px;
@@ -311,17 +312,18 @@
 }
 
 .addcard-form {
+  border: none;
   display: flex;
   flex-direction: column;
 }
 
-.addcard-form label {
+/* .addcard-form label {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
   font-size: 14px;
   color: #666;
-}
+} */
 
 .addcard-form input[type="text"],
 .addcard-form input[type="password"] {
@@ -329,7 +331,7 @@
   margin: 5px 0;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
   box-sizing: border-box;
   background-color: #ECEBF1;
@@ -345,7 +347,7 @@
   height: 40px;
   margin-right: 5px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
   background-color: #ECEBF1;
 }
