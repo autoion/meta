@@ -49,8 +49,8 @@ const Addcard = ({ initialCardData }) => {
         <label>카드 비밀번호:
           <div className="card-password-input">
             {formData.Card_password.map((digit, index) => (
-              <input key={index} type="password" name={`Card_password${index}`} value={digit} onChange={(e) => handleChange(e, index)} maxLength="1" className="card-password-box"/>
-             
+              <input key={index} type="text" name="Card_password" value={digit} onChange={handleChange} maxLength="1" className="card-password-box"/>
+              
             ))}
             <div className="card-password-dots">
               <div className="card-password-dot"></div>
