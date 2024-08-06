@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
+/*보유 카드 목록 */
 const Cardlist = ({ cards }) => {
   const navigate = useNavigate();
 
