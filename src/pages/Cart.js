@@ -36,11 +36,8 @@ function Cart({ cartItems }) {
     }));
   };
 
-  const deliveryfee = 3000; /* 배송비 */
-
-  if(TotalPrice >= 1000000){
-    deliveryfee = 0;
-  }
+  const totalPrice = TotalPrice(); 
+  const deliveryfee = totalPrice >= 100000 ? 0 : 3000; /* 10만원 이상이면 배송비 0원, 아니면 3000원 */
 
   return (
     <div className="cart-container">
@@ -69,7 +66,7 @@ function Cart({ cartItems }) {
           <div className="cart-summary">
             <div className="cart-summary-item">
               <span>상품 금액</span>
-              <span>{TotalPrice().toLocaleString()}원</span>
+              <span>{totalPrice.toLocaleString()}원</span>
             </div>
             <div className="cart-summary-item">
               <span>배송비</span>
@@ -77,7 +74,7 @@ function Cart({ cartItems }) {
             </div>
             <div className="cart-summary-item total">
               <span>총 금액</span>
-              <span>{(TotalPrice() + deliveryfee).toLocaleString()}원</span>
+              <span>{(totalPrice + deliveryfee).toLocaleString()}원</span>
             </div>
             <button className="checkout-button" onClick={handlecheckout_btn}>
               결제하기
